@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 208772753}
   - component: {fileID: 208772752}
   m_Layer: 0
-  m_Name: "\u7BB1\u5B50"
+  m_Name: box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -796,8 +796,6 @@ MonoBehaviour:
   speed: 10
   mySpriteR: {fileID: 208772750}
   fox: {fileID: 1148020816}
-  boxCol: {fileID: 208772752}
-  boxTra: {fileID: 208772751}
 --- !u!4 &832054433
 Transform:
   m_ObjectHideFlags: 0
@@ -934,7 +932,7 @@ GameObject:
   - component: {fileID: 1148020815}
   - component: {fileID: 1148020816}
   m_Layer: 0
-  m_Name: "\u72D0\u72F8"
+  m_Name: fox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

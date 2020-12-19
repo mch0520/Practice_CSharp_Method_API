@@ -10,16 +10,13 @@ public class FoxMove : MonoBehaviour
 	public SpriteRenderer mySpriteR;
 	//狐狸
 	public Rigidbody2D fox;
-	//箱子的碰撞器  Transform
-	public BoxCollider2D boxCol;
-	public Transform boxTra;
 
 	public void Start()
 	{
 		mySpriteR = GetComponent<SpriteRenderer>();
 		fox = GetComponent<Rigidbody2D>();
-		boxTra = GetComponent<Transform>();
-		boxCol = GetComponent<BoxCollider2D>();
+		mySpriteR= GameObject.Find("fox").GetComponent<SpriteRenderer>();
+		fox = GameObject.Find("fox").GetComponent<Rigidbody2D>();
 	}
 	public void Move(float speed)
 	{
