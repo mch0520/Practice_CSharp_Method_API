@@ -20,33 +20,32 @@ public class FoxMove : MonoBehaviour
 	}
 	public void Move(float speed)
 	{
-		speed *= Input.GetAxisRaw("Horizontal");
-		if(Input.GetKeyDown("a"))
+		if(Input.GetKey(KeyCode.A)&Input.GetKey(KeyCode.LeftArrow))
 		{
-			speed *= -1;
-		}
-		if(Input.GetKeyDown("d"))
-        {
-			Mathf.Abs(speed);
-        }
-		fox.AddForce(new Vector2(speed, 0));
-
-		if(Input.GetAxisRaw("Horizontal")>0)
-        {
-			mySpriteR.flipX = false;
-        }
-		else
-        {
+			speed *= Input.GetAxisRaw("Horizontal");
 			mySpriteR.flipX = true;
-        }
-
+			fox.AddForce(new Vector2(speed, 0));
+		}
+		else if(Input.GetKey(KeyCode.D)&Input.GetKey(KeyCode.RightArrow))
+        {
+			speed *= Input.GetAxisRaw("Horizontal");
+			mySpriteR.flipX = false;
+			fox.AddForce(new Vector2(speed, 0));
+		}
+		
 	}
 		
 	
 	public void Update()
 	{
 	   Move(speed);
-
-
+		if(Input.anyKey)
+        {
+			print("input success");
+        }
+		if(Input.GetKey("a"))
+        {
+			print("input a");
+        }
 	}
 }
