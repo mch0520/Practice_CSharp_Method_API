@@ -10,8 +10,6 @@ public class FoxMove : MonoBehaviour
 	public SpriteRenderer mySpriteR;
 	//狐狸
 	public Rigidbody2D fox;
-	//速度修改器
-    public float sp;
 
     public void Start()
 	{
@@ -24,21 +22,21 @@ public class FoxMove : MonoBehaviour
 	{
 		if(Input.GetKey(KeyCode.A) | Input.GetKey(KeyCode.LeftArrow))
 		{
-			sp = speed;
-			speed = sp*Input.GetAxisRaw("Horizontal");
+			speed *= Input.GetAxisRaw("Horizontal")*Time.deltaTime;
 			mySpriteR.flipX = true;
-			fox.AddForce(new Vector2(speed, 0));
 			print("a or Left" + speed);
 		}
-		if(Input.GetKey(KeyCode.D) | Input.GetKey(KeyCode.RightArrow))
+		else if(Input.GetKey(KeyCode.D) | Input.GetKey(KeyCode.RightArrow))
         {
-			sp = speed;
-			speed = sp*Input.GetAxisRaw("Horizontal");
+			speed *= Input.GetAxisRaw("Horizontal")*Time.deltaTime;
 			mySpriteR.flipX = false;
-			fox.AddForce(new Vector2(speed, 0));
 			print("d or Right"+ speed);
 		}
-		
+        else
+        {
+			speed = 0;
+        }
+		fox.AddForce(new Vector2(speed, 0));
 	}
 		
 	

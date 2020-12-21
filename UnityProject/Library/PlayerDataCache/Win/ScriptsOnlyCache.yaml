@@ -299,7 +299,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 0cd392a2ba6b37a234197662a70319bb
+      Hash: f5ce323dd0d740a61b288983485385dc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FoxMove
